@@ -19,28 +19,50 @@
   font-weight: medium;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Tajawal-ExtraLight";
+  src: url("/asset/font/Tajawal-ExtraLight.woff") format("woff");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tajawal-Light";
+  src: url("/asset/font/Tajawal-Light.woff") format("woff");
+  font-weight: lighter;
+  font-style: normal;
+}
+/*---------- Mixin ----------*/
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* ---------- Header ----------*/
 header {
   background-color: black;
   width: 100%;
   height: 50px;
-  display: flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 
   .objet {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     left: 60px;
+    @include flex-center;
   }
   .objet__logo {
     fill: white;
     width: auto;
-    height: 35px;
+    height: 30px;
     position: absolute;
     left: 60px;
     cursor: pointer;
@@ -52,8 +74,7 @@ header {
     color: white;
     text-transform: uppercase;
     font-size: 13px;
-    display: flex;
-    justify-content: space-between;
+    @include flex-between;
     font-family: "Sunflower-Bold";
   }
 
@@ -65,9 +86,7 @@ header {
   .objet__emote {
     width: 80px;
     height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-between;
     position: absolute;
     right: 60px;
   }
@@ -85,14 +104,53 @@ header {
     width: auto;
   }
 }
-
+/*---------- Accueil ----------*/
 .accueil {
   width: 100%;
-  height: 100vh;
-}
+  height: 703px;
+  @include flex-center;
+  background-image: url("/asset/img/fond.png");
 
-.accueil__fond {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  .accueil__bloc {
+    position: absolute;
+    left: 200px;
+  }
+
+  .accueil__bloc--texte {
+    color: white;
+
+    h1 {
+      font-family: "SunFlower-Bold";
+      text-transform: uppercase;
+      font-size: 48px;
+      line-height: 60px;
+    }
+    h2 {
+      font-family: "SunFlower-Light";
+      font-size: 23px;
+      text-transform: uppercase;
+      opacity: 50%;
+      padding-top: 50px;
+    }
+    h3 {
+      font-family: "Tajawal-Light";
+      font-size: 20px;
+      line-height: 25px;
+      padding-bottom: 35px;
+    }
+  }
+}
+.accueil__bloc button {
+  background-color: #f2f2f20e;
+  color: #b4a77e;
+  border: 4px solid #b4a77e;
+  border-radius: 50px;
+  font-family: "Sunflower-Medium";
+  font-size: 20px;
+  outline: none;
+  height: 45px;
+  width: 220px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
