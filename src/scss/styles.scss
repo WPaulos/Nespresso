@@ -51,6 +51,7 @@ header {
   background-color: black;
   width: 100%;
   height: 50px;
+  position: fixed;
   @include flex-center;
 
   .objet {
@@ -106,10 +107,11 @@ header {
 }
 /*---------- Accueil ----------*/
 .accueil {
-  width: 100%;
+  width: auto;
   height: 703px;
   @include flex-center;
   background-image: url("/asset/img/fond.png");
+  background-repeat: no-repeat;
 
   .accueil__bloc {
     position: absolute;
@@ -139,18 +141,82 @@ header {
       padding-bottom: 35px;
     }
   }
-}
-.accueil__bloc button {
-  background-color: #f2f2f20e;
-  color: #b4a77e;
-  border: 4px solid #b4a77e;
-  border-radius: 50px;
-  font-family: "Sunflower-Medium";
-  font-size: 20px;
-  outline: none;
-  height: 45px;
-  width: 220px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
+  .accueil__bloc button {
+    background-color: #f2f2f20e;
+    color: #b4a77e;
+    border: 4px solid #b4a77e;
+    border-radius: 50px;
+    font-family: "Sunflower-Medium";
+    font-size: 20px;
+    outline: none;
+    height: 45px;
+    width: 220px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .accueil__macaron {
+    position: absolute;
+    right: 200px;
+    height: 300px;
+    width: 620px;
+  }
+  .accueil__macaron--img {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    height: 190px;
+    width: auto;
+  }
+  .accueil__macaron--circle1 {
+    width: 110px;
+    height: 110px;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    background-color: #61523a;
+  }
+  .accueil__macaron--circle2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #293837;
+    opacity: 80%;
+  }
+  .accueil__macaron--title {
+    color: #f4f4f2;
+    opacity: 15%;
+    font-family: "Tajawal-ExtraLight";
+    font-size: 120px;
+    text-align: right;
+    line-height: 80px;
+    z-index: 2;
+    position: absolute;
+    bottom: 60px;
+    right: 200px;
+  }
+  .accueil__logo {
+    height: 50px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
+  }
+  .accueil__logo--nespresso {
+    height: 20px;
+    width: auto;
+    fill: white;
+  }
+  .accueil__logo--ld {
+    height: 30px;
+    width: auto;
+    fill: #a39161;
+  }
 }
